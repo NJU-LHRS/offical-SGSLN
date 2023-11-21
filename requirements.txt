@@ -1,0 +1,12 @@
+numpy==1.22.4
+opencv-python==4.6.0
+pathlib==1.0.1
+ipdb==0.13.11
+wandb==0.12.21
+torchmetrics==0.9.3
+Pillow==9.1.1
+albumentations==1.2.1
+tqdm==4.64.0
+onnx==
+netron==
+prefetch_generator==

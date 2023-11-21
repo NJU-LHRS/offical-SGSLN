@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25984c04-a74d-417b-9e7f-de2be4294b4b" name="Changes" comment="Changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/inplace_abn" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27xzIMxtCCxrxQE9stIO8ydIk0t" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "F:/科研/深度学习/变化检测框架/变化检测代码框架-自留实验版本",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\科研\深度学习\dpcd\idea1合集\idea1\dpcd" />
+      <recent name="F:\科研\深度学习\dpcd\idea1合集\idea1\dpcd\utils" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="idea2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="idea1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="sftp://root@region-3.autodl.com:35380/root/miniconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25984c04-a74d-417b-9e7f-de2be4294b4b" name="Changes" comment="" />
+      <created>1650276444232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650276444232</updated>
+      <workItem from="1651292551081" duration="12359000" />
+      <workItem from="1651498966780" duration="601000" />
+      <workItem from="1651669852552" duration="2387000" />
+      <workItem from="1652093319234" duration="4102000" />
+      <workItem from="1652692744213" duration="1599000" />
+      <workItem from="1653919357830" duration="58000" />
+      <workItem from="1658406004023" duration="549000" />
+      <workItem from="1659361302495" duration="5350000" />
+      <workItem from="1660305603849" duration="42622000" />
+      <workItem from="1660715803119" duration="32182000" />
+      <workItem from="1661410687348" duration="33574000" />
+      <workItem from="1661527472195" duration="2977000" />
+      <workItem from="1661610273622" duration="5942000" />
+      <workItem from="1661616616350" duration="22276000" />
+      <workItem from="1661826768991" duration="9292000" />
+      <workItem from="1661865974695" duration="14731000" />
+      <workItem from="1662002193947" duration="1087000" />
+      <workItem from="1662123549522" duration="10435000" />
+      <workItem from="1662199112227" duration="8821000" />
+      <workItem from="1662258184005" duration="3610000" />
+      <workItem from="1662262510795" duration="7713000" />
+      <workItem from="1662348353645" duration="595000" />
+      <workItem from="1662428525301" duration="3373000" />
+      <workItem from="1662468939396" duration="21000" />
+      <workItem from="1662728985807" duration="17650000" />
+      <workItem from="1662865109587" duration="16367000" />
+      <workItem from="1663553824346" duration="9292000" />
+      <workItem from="1663576681714" duration="3195000" />
+      <workItem from="1664072853184" duration="870000" />
+      <workItem from="1664076439047" duration="230000" />
+      <workItem from="1664158966503" duration="4498000" />
+      <workItem from="1664625550876" duration="26423000" />
+      <workItem from="1664727348787" duration="41968000" />
+      <workItem from="1665024886981" duration="30819000" />
+      <workItem from="1665136272556" duration="9511000" />
+      <workItem from="1665216269477" duration="589000" />
+      <workItem from="1665238300943" duration="3481000" />
+      <workItem from="1665305900562" duration="4382000" />
+      <workItem from="1665338721217" duration="2604000" />
+      <workItem from="1665406734213" duration="4290000" />
+      <workItem from="1665926780921" duration="3303000" />
+      <workItem from="1665974528616" duration="719000" />
+      <workItem from="1665988405961" duration="4790000" />
+      <workItem from="1666167807548" duration="1741000" />
+      <workItem from="1666185177185" duration="19564000" />
+      <workItem from="1666500144705" duration="6886000" />
+      <workItem from="1666618028755" duration="4251000" />
+      <workItem from="1666781561994" duration="1474000" />
+      <workItem from="1666837108272" duration="3673000" />
+      <workItem from="1666967939408" duration="2560000" />
+      <workItem from="1667095518587" duration="4394000" />
+      <workItem from="1667228305480" duration="620000" />
+      <workItem from="1667273824219" duration="5493000" />
+      <workItem from="1667356575672" duration="1396000" />
+      <workItem from="1667405078697" duration="829000" />
+      <workItem from="1667477994782" duration="775000" />
+      <workItem from="1667528733563" duration="3687000" />
+      <workItem from="1667701366401" duration="16904000" />
+      <workItem from="1667919526072" duration="3327000" />
+      <workItem from="1668042478775" duration="8556000" />
+      <workItem from="1668177406443" duration="17996000" />
+      <workItem from="1668326400412" duration="6936000" />
+      <workItem from="1668353802582" duration="512000" />
+      <workItem from="1668388696887" duration="15060000" />
+      <workItem from="1668557209864" duration="10811000" />
+      <workItem from="1668823439796" duration="1557000" />
+      <workItem from="1668861213342" duration="1610000" />
+      <workItem from="1668907004100" duration="1729000" />
+      <workItem from="1668994207278" duration="2090000" />
+      <workItem from="1671131330232" duration="5660000" />
+      <workItem from="1676859029614" duration="64156000" />
+      <workItem from="1677257082986" duration="652000" />
+      <workItem from="1677294521352" duration="30753000" />
+      <workItem from="1677554039129" duration="3347000" />
+      <workItem from="1677727103271" duration="9339000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/path_hyperparameter_py$calculate_video_memory.coverage" NAME="calculate_video_memory 覆盖结果" MODIFIED="1651594325813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/path_hyperparameter_py$predict.coverage" NAME="predict 覆盖结果" MODIFIED="1652280887913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dpcd_model_py$main.coverage" NAME="main 覆盖结果" MODIFIED="1660901820212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/path_hyperparameter_py$train.coverage" NAME="train 覆盖结果" MODIFIED="1653820955995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
