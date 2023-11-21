@@ -41,7 +41,7 @@ def save_model(model, path, epoch, mode, optimizer=None):
     logging.info(f'best {mode} model {epoch} saved at {localtime}!')
 
 
-def train_val_test(
+def train_val(
         mode, dataset_name,
         dataloader, device, log_wandb, net, optimizer, total_step,
         lr, criterion, metric_collection, to_pilimg, epoch,
@@ -50,14 +50,14 @@ def train_val_test(
         best_f1score_model_path=None, best_loss_model_path=None, non_improved_epoch=None
 ):
     """
-    train or evaluate or test on specified dataset,
+    train or evaluate on specified dataset,
     notice that parameter [warmup_lr, grad_scaler] is required in training,
     and parameter [best_metrics, checkpoint_path, best_f1score_model_path, best_loss_model_path,
      non_improved_epoch] is required in evaluation
 
      Parameter:
-        mode(str): ensure whether train or evaluate or test,
-            should be `train` or `val` or `test`
+        mode(str): ensure whether train or evaluate,
+            should be `train` or `val`
         dataset_name(str): name of specified dataset
         dataloader(class): dataloader of corresponding mode and specified dataset
         device(str): model running device
@@ -84,12 +84,10 @@ def train_val_test(
         return log_wandb, net, optimizer, grad_scaler, total_step, lr,
         when mode = `val`,
         return log_wandb, net, optimizer, total_step, lr, best_metrics, non_improved_epoch
-        when mode = `test`,
-        return log_wandb, net, optimizer, total_step, lr
     """
-    assert mode in ['train', 'val', 'test'], 'mode should be train, val or test'
+    assert mode in ['train', 'val'], 'mode should be train, val'
     epoch_loss = 0
-    # Begin Training/Evaluating/Testing
+    # Begin Training/Evaluating
     if mode == 'train':
         net.train()
     else:
@@ -225,4 +223,4 @@ def train_val_test(
     elif mode == 'val':
         return log_wandb, net, optimizer, total_step, lr, best_metrics, non_improved_epoch
     else:
-        return log_wandb, net, optimizer, total_step, lr
+        raise NameError('mode should be train or val')

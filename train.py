@@ -16,7 +16,7 @@ import random
 import wandb
 from models.Models import DPCD
 from torchmetrics import MetricCollection, Accuracy, Precision, Recall, F1Score
-from utils.utils import train_val_test
+from utils.utils import train_val
 from utils.dataset_process import compute_mean_std
 from utils.dataset_process import image_shuffle, split_image
 import onnx
@@ -67,7 +67,7 @@ def train_net(dataset_name):
     """
     This is the workflow of training model and evaluating model,
     note that the dataset should be organized as
-    :obj:`dataset_name`/`train` or `val` or `test`/`t1` or `t2` or `label`
+    :obj:`dataset_name`/`train` or `val`/`t1` or `t2` or `label`
 
     Parameter:
         dataset_name(str): name of dataset
@@ -77,11 +77,11 @@ def train_net(dataset_name):
     """
     # 1. Create dataset, checkpoint and best model path
 
-    # compute mean and std of train dataset to normalize train/val/test dataset
+    # compute mean and std of train dataset to normalize train/val dataset
     t1_mean, t1_std = compute_mean_std(images_dir=f'./{dataset_name}/train/t1/')
     t2_mean, t2_std = compute_mean_std(images_dir=f'./{dataset_name}/train/t2/')
 
-    # dataset path should be dataset_name/train or val or test/t1 or t2 or label
+    # dataset path should be dataset_name/train or val/t1 or t2 or label
     dataset_args = dict(t1_mean=t1_mean, t1_std=t1_std, t2_mean=t2_mean, t2_std=t2_std)
     train_dataset = BasicDataset(t1_images_dir=f'./{dataset_name}/train/t1/',
                                  t2_images_dir=f'./{dataset_name}/train/t2/',
@@ -91,15 +91,10 @@ def train_net(dataset_name):
                                t2_images_dir=f'./{dataset_name}/val/t2/',
                                labels_dir=f'./{dataset_name}/val/label/',
                                train=False, **dataset_args)
-    test_dataset = BasicDataset(t1_images_dir=f'./{dataset_name}/test/t1/',
-                                t2_images_dir=f'./{dataset_name}/test/t2/',
-                                labels_dir=f'./{dataset_name}/test/label/',
-                                train=False, **dataset_args)
 
     # 2. Markdown dataset size
     n_train = len(train_dataset)
     n_val = len(val_dataset)
-    n_test = len(test_dataset)
 
     # 3. Create data loaders
 
@@ -111,8 +106,6 @@ def train_net(dataset_name):
     train_loader = DataLoaderX(train_dataset, shuffle=True, drop_last=False, batch_size=ph.batch_size, **loader_args)
     val_loader = DataLoaderX(val_dataset, shuffle=False, drop_last=False,
                              batch_size=ph.batch_size * ph.inference_ratio, **loader_args)
-    test_loader = DataLoaderX(test_dataset, shuffle=False, drop_last=False,
-                              batch_size=ph.batch_size * ph.inference_ratio, **loader_args)
 
     # 4. Initialize logging
 
@@ -133,7 +126,6 @@ def train_net(dataset_name):
         Learning rate:   {ph.learning_rate}
         Training size:   {n_train}
         Validation size: {n_val}
-        Test size: {n_test}
         Checkpoints:     {ph.save_checkpoint}
         save best model: {ph.save_best_model}
         Device:          {device.type}
@@ -190,21 +182,20 @@ def train_net(dataset_name):
     for epoch in range(ph.epochs):
 
         log_wandb, net, optimizer, grad_scaler, total_step, lr = \
-            train_val_test(
+            train_val(
                 mode='train', dataset_name=dataset_name,
                 dataloader=train_loader, device=device, log_wandb=log_wandb, net=net,
                 optimizer=optimizer, total_step=total_step, lr=lr, criterion=criterion,
                 metric_collection=metric_collection, to_pilimg=to_pilimg, epoch=epoch,
                 warmup_lr=warmup_lr, grad_scaler=grad_scaler
             )
-
         # 6. Begin evaluation
 
         # starting validation from evaluate epoch to minimize time
         if epoch >= ph.evaluate_epoch:
             with torch.no_grad():
                 log_wandb, net, optimizer, total_step, lr, best_metrics, non_improved_epoch = \
-                    train_val_test(
+                    train_val(
                         mode='val', dataset_name=dataset_name,
                         dataloader=val_loader, device=device, log_wandb=log_wandb, net=net,
                         optimizer=optimizer, total_step=total_step, lr=lr, criterion=criterion,
@@ -212,19 +203,6 @@ def train_net(dataset_name):
                         best_metrics=best_metrics, checkpoint_path=checkpoint_path,
                         best_f1score_model_path=best_f1score_model_path, best_loss_model_path=best_loss_model_path,
                         non_improved_epoch=non_improved_epoch
-                    )
-        # 7. Begin test
-
-        # starting test from test epoch to minimize time
-        if epoch >= ph.test_epoch:
-            with torch.no_grad():
-                log_wandb, net, optimizer, total_step, lr = \
-                    train_val_test(
-                        mode='test', dataset_name=dataset_name,
-                        dataloader=test_loader, device=device, log_wandb=log_wandb, net=net,
-                        optimizer=optimizer, total_step=total_step, lr=lr, criterion=criterion,
-                        metric_collection=metric_collection, to_pilimg=to_pilimg, epoch=epoch,
-                        best_metrics=best_metrics, checkpoint_path=checkpoint_path
                     )
 
     wandb.finish()

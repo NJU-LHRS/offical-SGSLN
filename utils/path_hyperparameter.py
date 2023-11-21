@@ -17,9 +17,8 @@ class Path_Hyperparameter:
     load: str = False  # Load model and/or optimizer from a .pth file for testing or continuing training
     max_norm: float = 20  # gradient clip max norm
 
-    # evaluate and test hyper-parameter
+    # evaluate hyper-parameter
     evaluate_epoch: int = 250  # start evaluate after training for evaluate epochs
-    test_epoch: int = 200  # start test after training for test epochs
     stage_epoch = [0, 0, 0, 0, 0]  # adjust learning rate after every stage epoch
     save_checkpoint: bool = False  # if save checkpoint of model or not
     save_interval: int = 10  # save checkpoint every interval epoch
