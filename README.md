@@ -1,7 +1,4 @@
 # Semantic-guidance-and-spatial-localization-network
-The code of SGSLN
-
-# Simple-Remote-Sensing-Change-Detection-Framework
 
 ## Introduction
 
