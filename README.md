@@ -88,6 +88,19 @@ For test and inference, run the following code in command line.
 
 All the configs of dataset, training, validation and test are put in the file "utils/path_hyperparameter.py", you can change the configs in this file.
 
+## Citation
+
+If you use this work in your research, please cite:
+`@article{zhao2023exchanging,
+  title={Exchanging Dual-Encoder--Decoder: A New Strategy for Change Detection With Semantic Guidance and Spatial Localization},
+  author={Zhao, Sijie and Zhang, Xueliang and Xiao, Pengfeng and He, Guangjun},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={61},
+  pages={1--16},
+  year={2023},
+  publisher={IEEE}
+}`
+
 ---
 
 ## 简介
@@ -178,3 +191,15 @@ Paper: S2Looking: A Satellite Side-Looking Dataset for Building Change Detection
 
 所有和数据集、训练、验证和测试的设置都放在了“utils/path_hyperparameter.py”文件中，你可以在这个文件里修改设置
 
+## 引用
+
+如果你在你的研究中用到了这篇工作的内容，请引用：
+`@article{zhao2023exchanging,
+  title={Exchanging Dual-Encoder--Decoder: A New Strategy for Change Detection With Semantic Guidance and Spatial Localization},
+  author={Zhao, Sijie and Zhang, Xueliang and Xiao, Pengfeng and He, Guangjun},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={61},
+  pages={1--16},
+  year={2023},
+  publisher={IEEE}
+}`
