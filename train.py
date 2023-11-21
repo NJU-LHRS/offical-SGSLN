@@ -41,56 +41,6 @@ class DataLoaderX(DataLoader):
         return BackgroundGenerator(super().__iter__())
 
 
-def visualize_model(model):
-    """Visualize model to check model framework"""
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # working device
-    model = model.to(device)
-    data = (torch.randn((2, 3, 256, 256)).to(device)) * 2
-    # 导出
-    torch.onnx.export(
-        model,
-        data,
-        'model.onnx',
-        export_params=True,
-        opset_version=8,
-    )
-
-    # adding dimension information
-    model_file = 'model.onnx'
-    onnx_model = onnx.load(model_file)
-    onnx.save(onnx.shape_inference.infer_shapes(onnx_model), model_file)
-
-    netron.start('model.onnx')
-
-
-def statistic_time_consume(code_name):
-    os.system(f'python -m torch.utils.bottleneck {code_name}')
-
-
-def debug_code(code_name):
-    os.system(f'python -m ipdb {code_name}')
-
-
-def zip_file(zip_file, save_file):
-    os.system(f'zip -r {save_file}.zip {zip_file}')
-
-
-def unzip_file(unzip_file):
-    os.system(f'unzip {unzip_file}')
-
-
-# def show_tensor_information():
-# show every tensor information such as shape, device, type while training
-# import torchsnooper
-# 对于函数，使用修饰器
-# @torchsnooper.snoop()
-# def your function
-
-# 如果不是函数，使用 with 语句来激活 TorchSnooper，把训练的那个循环装进 with 语句中去。
-# with torchsnooper.snoop():
-# your code
-
-
 def random_seed(SEED):
     random.seed(SEED)
     os.environ['PYTHONHASHSEED'] = str(SEED)
@@ -105,18 +55,12 @@ def random_seed(SEED):
     torch.backends.cudnn.benchmark = True
 
 def auto_experiment():
-    # os.system('unzip njds_crop')
-    # set random seed to make the experiment reproducible
     random_seed(SEED=ph.random_seed)
-    # image_shuffle(dataset_name='njds_crop')
-    # split_image(dataset_name='njds_crop', fixed_ratio=False)
     try:
-        train_net(dataset_name='njds_crop_split')
+        train_net(dataset_name=ph.dataset_name)
     except KeyboardInterrupt:
         logging.info('Interrupt')
         sys.exit(0)
-    # os.system('rm -rf njds_crop')
-    # os.system('rm -rf njds_crop_split')
 
 
 def train_net(dataset_name):
@@ -284,49 +228,9 @@ def train_net(dataset_name):
                     )
 
     wandb.finish()
-    # os.system('shutdown')
 
 
 if __name__ == '__main__':
-    # # set random seed to make the experiment reproducible
-    # random_seed(SEED=ph.random_seed)
-    # image_shuffle(dataset_name='njds_crop')
-    # split_image(dataset_name='njds_crop', fixed_ratio=False)
-    # try:
-    #     train_net(dataset_name='njds_crop_split')
-    # except KeyboardInterrupt:
-    #     logging.info('Interrupt')
-    #     sys.exit(0)
-
-    # for i in range(10):
-    #     ph.random_seed += 17
-    #     random_seed(SEED=ph.random_seed)
-    #     try:
-    #         train_net(dataset_name='njds_crop_split')
-    #     except KeyboardInterrupt:
-    #         logging.info('Interrupt')
-    #         sys.exit(0)
-    # os.system('shutdown')
 
     auto_experiment()
 
-    # bs_lr_option = [(16, 2e-4), (32, 4e-4)]
-    # warm_up_option = [500, 1000, 2000, 4000]
-    #
-    # noise_option = [0.3, 0.5, 0.8]
-    # dropout_option = [0.1, 0.3, 0.5]
-    # patience_option = []
-    #
-    # for bs, lr in bs_lr_option:
-    #     for warm_up in warm_up_option:
-    #         if bs == 16 and (warm_up == 500 or warm_up == 1000):
-    #             continue
-    #         ph.batch_size, ph.learning_rate = bs, lr
-    #         ph.warm_up_step = warm_up
-    #         auto_experiment()
-
-    # for noise in noise_option:
-    #     for dropout in dropout_option:
-    #         ph.noise_p = noise
-    #         ph.dropout_p = dropout
-    #         auto_experiment()

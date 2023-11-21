@@ -1,6 +1,9 @@
 class Path_Hyperparameter:
     random_seed = 42
 
+    # dataset hyper-parameter
+    dataset_name = 'your_dataset_name'
+
     # training hyper-parameter
     epochs: int = 500  # Number of epochs
     batch_size: int = 16  # Batch size
@@ -11,7 +14,7 @@ class Path_Hyperparameter:
     warm_up_step = 500  # warm up step
     weight_decay: float = 1e-3  # AdamW optimizer weight decay
     amp: bool = True  # if use mixed precision or not
-    load: str = 'try_model.pth'  # Load model and/or optimizer from a .pth file for testing or continuing training
+    load: str = False  # Load model and/or optimizer from a .pth file for testing or continuing training
     max_norm: float = 20  # gradient clip max norm
 
     # evaluate and test hyper-parameter
@@ -23,7 +26,7 @@ class Path_Hyperparameter:
     save_best_model: bool = False  # if save best model or not
 
     # log wandb hyper-parameter
-    log_wandb_project: str = 'dpcd_last2'  # wandb project name
+    log_wandb_project: str = 'dpcd'  # wandb project name
 
     # data transform hyper-parameter
     noise_p: float = 0.8  # probability of adding noise

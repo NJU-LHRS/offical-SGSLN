@@ -41,9 +41,6 @@ def save_model(model, path, epoch, mode, optimizer=None):
     logging.info(f'best {mode} model {epoch} saved at {localtime}!')
 
 
-# parameter [warmup_lr, grad_scaler] is required in training
-# parameter [best_metrics, checkpoint_path, best_f1score_model_path, best_loss_model_path, non_improved_epoch]
-# is required in evaluation
 def train_val_test(
         mode, dataset_name,
         dataloader, device, log_wandb, net, optimizer, total_step,
