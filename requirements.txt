@@ -9,4 +9,4 @@ albumentations==1.2.1
 tqdm==4.64.0
 onnx==
 netron==
-prefetch_generator==
+prefetch_generator==1.0.1
