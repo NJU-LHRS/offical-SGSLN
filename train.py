@@ -101,7 +101,7 @@ def train_net(dataset_name):
     loader_args = dict(num_workers=8,
                        prefetch_factor=5,
                        persistent_workers=True,
-                       pin_memeory=True,
+                       # pin_memeory=True,
                        )
     train_loader = DataLoaderX(train_dataset, shuffle=True, drop_last=False, batch_size=ph.batch_size, **loader_args)
     val_loader = DataLoaderX(val_dataset, shuffle=False, drop_last=False,
