@@ -28,10 +28,10 @@ class Path_Hyperparameter:
     log_wandb_project: str = 'dpcd'  # wandb project name
 
     # data transform hyper-parameter
-    noise_p: float = 0.8  # probability of adding noise
+    noise_p: float = 0.3  # probability of adding noise
 
     # model hyper-parameter
-    dropout_p: float = 0.3  # probability of dropout
+    dropout_p: float = 0.1  # probability of dropout
     patch_size: int = 256  # size of input image
 
     y = 2  # ECA-net parameter
