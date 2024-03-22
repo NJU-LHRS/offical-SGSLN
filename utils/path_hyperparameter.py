@@ -20,9 +20,9 @@ class Path_Hyperparameter:
     # evaluate hyper-parameter
     evaluate_epoch: int = 250  # start evaluate after training for evaluate epochs
     stage_epoch = [0, 0, 0, 0, 0]  # adjust learning rate after every stage epoch
-    save_checkpoint: bool = False  # if save checkpoint of model or not
+    save_checkpoint: bool = True  # if save checkpoint of model or not
     save_interval: int = 10  # save checkpoint every interval epoch
-    save_best_model: bool = False  # if save best model or not
+    save_best_model: bool = True  # if save best model or not
 
     # log wandb hyper-parameter
     log_wandb_project: str = 'dpcd'  # wandb project name
